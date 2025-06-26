@@ -1,3 +1,246 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 20px 10px rgba(255, 0, 0, 0.3);
+    transform: scale(1.02);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.2);
+    transform: scale(1);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-10px);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+  80% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes flash {
+  0%, 100% {
+    background-color: inherit;
+  }
+  25%, 75% {
+    background-color: #fff700;
+  }
+  50% {
+    background-color: #ffec80;
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(-10deg);
+  }
+  30% {
+    transform: rotate(7deg);
+  }
+  45% {
+    transform: rotate(-7deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-3deg);
+  }
+  90% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes rubberband {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, .95, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes jello {
+  0%, 100% {
+    transform: none;
+  }
+  11.1% {
+    transform: none;
+  }
+  22.2% {
+    transform: skewX(-12.5deg) skewY(-12.5deg);
+  }
+  33.3% {
+    transform: skewX(6.25deg) skewY(6.25deg);
+  }
+  44.4% {
+    transform: skewX(-3.125deg) skewY(-3.125deg);
+  }
+  55.5% {
+    transform: skewX(1.5625deg) skewY(1.5625deg);
+  }
+  66.6% {
+    transform: skewX(-0.78125deg) skewY(-0.78125deg);
+  }
+  77.7% {
+    transform: skewX(0.390625deg) skewY(0.390625deg);
+  }
+  88.8% {
+    transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+  }
+}
+
+@keyframes swing {
+  20% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes fly-across {
+  0% {
+    transform: translateX(-20vw) rotate(-10deg) scale(1);
+    opacity: 0.7;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(40vw) rotate(8deg) scale(1.1);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(110vw) rotate(-8deg) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.celebration-fade-in {
+  animation: fade-in 0.7s ease;
+}
+
+@keyframes fly-across-spin {
+  0% {
+    transform: translateX(-20vw) rotate(-10deg) scale(1) rotateZ(0deg);
+    opacity: 0.7;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(40vw) rotate(8deg) scale(1.1) rotateZ(180deg);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(110vw) rotate(-8deg) scale(1) rotateZ(360deg);
+    opacity: 0;
+  }
+}
+
+.pulse-active {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.shake-active {
+  animation: shake 0.5s cubic-bezier(0.36, 0, 0.66, 1);
+  transform-origin: center;
+}
+
+.bounce-active {
+  animation: bounce 1s cubic-bezier(0.28, 0.84, 0.42, 1) 1;
+}
+
+.flash-active {
+  animation: flash 1s linear 1;
+}
+
+.wiggle-active {
+  animation: wiggle 1s ease-in-out 1;
+  transform-origin: center;
+}
+
+.rubberband-active {
+  animation: rubberband 1s ease 1;
+}
+
+.jello-active {
+  animation: jello 1s both;
+}
+
+.swing-active {
+  animation: swing 1s ease-in-out 1;
+  transform-origin: top center;
+}
+
+.flying-animal {
+  animation: fly-across 2.5s linear forwards;
+}

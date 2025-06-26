@@ -5,3 +5,12 @@ export type Character = {
   species: string;
   image: string;
 };
+
+export interface Task {
+  id: number;
+  text: string;
+  date: Date | null;
+  priority: string | null;
+  createdAt: string;
+  done: boolean;
+}

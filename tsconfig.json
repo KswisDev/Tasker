@@ -3,6 +3,7 @@
     "baseUrl": "./src",
     "target": "esnext",
     "module": "esnext",
-    "jsx": "react"
+    "jsx": "react",
+    "moduleResolution": "bundler"
   }
 }
